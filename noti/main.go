@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"flag"
 	notify "github.com/mqu/go-notify"
-	zmq "github.com/pebbe/zmq2"
+	zmq "github.com/pebbe/zmq3"
 	"log"
 	"os"
 	"os/signal"
