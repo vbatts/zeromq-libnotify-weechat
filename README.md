@@ -7,7 +7,14 @@ Golang + ZeroMQ + libnotify tool to connect to a zmq_notify.rb weechat script
 Install
 -------
 
+if you have ZeroMQ v3 installed, run:
+
 	go get github.com/vbatts/flaming-happiness/noti
+
+for ZeroMQ v2
+
+	go get github.com/vbatts/flaming-happiness/noti2
+
 
 Running
 -------

@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"flag"
-	zmq "github.com/pebbe/zmq3"
+	zmq "github.com/pebbe/zmq2"
 	"github.com/vbatts/flaming-happiness/common"
 	"log"
 )
