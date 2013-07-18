@@ -25,6 +25,7 @@ func init() {
 	notify.Init("IRC-noti")
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, os.Interrupt)
+	signal.Notify(c, os.Kill)
 	go func() {
 		for sig := range c {
 			// sig is a ^C, handle it
