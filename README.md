@@ -3,6 +3,12 @@ flaming-happiness
 
 Golang + ZeroMQ + libnotify tool to connect to a zmq_notify.rb weechat script
 
+This is ideal for situatishes like screen + weechat is running on a faroff
+remote host, so a notification plugin for weechat would have no good access to
+DISPLAY on the local host that you are connecting from.
+Further, since it is pub/sub, there is no limit to only having a single client 
+being notified.
+
 
 Install
 -------
