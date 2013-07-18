@@ -24,3 +24,9 @@ Then run `noti` against your site
 
 Be sure you've allowed for any firewalling between noti and the zmq_notify
 
+Thanks
+------
+
+To folks that had already supplied the pieces of a simpler enabler like this
+and to github for the wonky repository name recommendations.
+
