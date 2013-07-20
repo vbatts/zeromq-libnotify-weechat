@@ -22,6 +22,11 @@ for ZeroMQ v2
 	go get github.com/vbatts/flaming-happiness/noti2
 
 
+If you're on Fedora, for dependencies, run:
+
+	yum install zeromq3-devel libnotify-devel
+
+
 Running
 -------
 
