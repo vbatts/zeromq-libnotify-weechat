@@ -24,7 +24,11 @@ for ZeroMQ v2
 
 If you're on Fedora, for dependencies, run:
 
-	yum install zeromq3-devel libnotify-devel
+	yum install golang zeromq3-devel libnotify-devel
+
+If you're on debian, for dependencies, run:
+
+	apt-get install golang libnotify-dev libzmq3-dev
 
 
 Running
