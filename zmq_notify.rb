@@ -21,7 +21,7 @@
 #    zmq = ctx.socket( ZMQ::SUB )
 #    zmq.connect( "tcp://example.com:2428" )
 #    zmq.setsockopt( ZMQ::SUBSCRIBE, '' )
-#    
+#
 #    loop do
 #        pp YAML.load( zmq.recv )
 #    end
@@ -241,7 +241,13 @@ class ZMQNotify
 		#
 		ignored = self.ignore_tags.split( ',' )
 		tags    = tags.split( ',' )
-		return WEECHAT_RC_OK unless ( ignored & tags ).empty? 
+		return WEECHAT_RC_OK unless ( ignored & tags ).empty?
+
+		message = if message.respond_to?(:encode)
+					  message.encode('UTF-8', invalid: :replace, undef: :replace)
+				  else
+					  message
+				  end
 
 		notify = {
 			:highlight => ! highlight.to_i.zero?,
@@ -258,7 +264,11 @@ class ZMQNotify
 		#
 		self.print_info "Message notification: %p" % [ notify ] if DEBUG
 		if self.use_json.true?
-		  self.zmq.send( notify.to_json )
+		  begin
+		    self.zmq.send( notify.to_json )
+		  rescue Encoding::UndefinedConversionError => ex
+			self.print_info "Failed encoding msg to JSON [#{notify.inspect}]"
+		  end
 		else
 		  self.zmq.send( notify.to_yaml )
 		end
