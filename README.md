@@ -19,7 +19,7 @@ if you have ZeroMQ v3 installed, run:
 
 for ZeroMQ v2
 
-	go get github.com/vbatts/flaming-happiness/noti2
+	go get -tags zmq2 github.com/vbatts/flaming-happiness/noti
 
 
 If you're on Fedora, for dependencies, run:
